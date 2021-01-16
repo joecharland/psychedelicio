@@ -1,0 +1,27 @@
+<p>
+  <strong>Url:</strong>
+  <%= @domain.url %>
+</p>
+
+<p>
+  <strong>Extension:</strong>
+  <%= @domain.extension %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @domain.price %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @domain.date %>
+</p>
+
+<p>
+  <strong>Venue:</strong>
+  <%= @domain.venue %>
+</p>
+
+<%= link_to 'Edit', edit_domain_path(@domain), class:"btn btn-primary" %> |
+<%= link_to 'Back', domains_path, class:"btn btn-primary" %>

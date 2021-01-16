@@ -1,0 +1,37 @@
+<%= form_with(model: domain) do |form| %>
+  <% if domain.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(domain.errors.count, "error") %> prohibited this domain from being saved:</h2>
+
+      <ul>
+        <% domain.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :url, class:"form-control", placeholder:"Domain Name" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :extension, class:"form-control", placeholder:"Extension" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :price, class:"form-control", placeholder:"Price" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.date_select :date, class:"form-control", placeholder:"Date of sale" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :venue, class:"form-control", placeholder:"Venue" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-primary" %>
+  </div>
+<% end %>
