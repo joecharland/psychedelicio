@@ -5,15 +5,5 @@
   <%= @company.ticker %>
 </p>
 
-<p>
-  <strong>Company name:</strong>
-  <%= @company.company_name %>
-</p>
-
-<p>
-  <strong>Latest price:</strong>
-  <%= @company.latest_price %>
-</p>
-
 <%= link_to 'Edit', edit_company_path(@company) %> |
 <%= link_to 'Back', companies_path %>

@@ -1,10 +1,10 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-  
+
   # GET /companies
   # GET /companies.json
   def index
+    @api = StockQuote::Stock.new(api_key: "pk_652ed77d4c8a4de5863164fa319e1cb8")
     @companies = Company.all
   end
 
@@ -70,6 +70,6 @@ class CompaniesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def company_params
-      params.require(:company).permit(:ticker, :company_name, :latest_price)
+      params.require(:company).permit(:ticker)
     end
 end

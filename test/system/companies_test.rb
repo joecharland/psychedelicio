@@ -14,8 +14,6 @@ class CompaniesTest < ApplicationSystemTestCase
     visit companies_url
     click_on "New Company"
 
-    fill_in "Company name", with: @company.company_name
-    fill_in "Latest price", with: @company.latest_price
     fill_in "Ticker", with: @company.ticker
     click_on "Create Company"
 
@@ -27,8 +25,6 @@ class CompaniesTest < ApplicationSystemTestCase
     visit companies_url
     click_on "Edit", match: :first
 
-    fill_in "Company name", with: @company.company_name
-    fill_in "Latest price", with: @company.latest_price
     fill_in "Ticker", with: @company.ticker
     click_on "Update Company"
 

@@ -6,18 +6,21 @@
   <thead>
     <tr>
       <th>Ticker</th>
-      <th>Company name</th>
-      <th>Latest price</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @companies.each do |company| %>
+    <% stock = StockQuote::Stock.quote(company.ticker) %>
+    <% stock2 = StockQuote::Stock.logo(company.ticker) %>
       <tr>
+        <td><img src="<%= stock2.url %>"> </td>
         <td><%= company.ticker %></td>
-        <td><%= company.company_name %></td>
-        <td><%= company.latest_price %></td>
+        <td><%= stock.company_name %></td>
+        <td><%= stock.latest_price %></td>
+        <td><%= stock.market_cap %></td>
         <td><%= link_to 'Show', company %></td>
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>

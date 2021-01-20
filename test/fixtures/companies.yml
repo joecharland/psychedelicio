@@ -2,10 +2,6 @@
 
 one:
   ticker: MyString
-  company_name: MyString
-  latest_price: 1
 
 two:
   ticker: MyString
-  company_name: MyString
-  latest_price: 1
